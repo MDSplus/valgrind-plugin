@@ -2,6 +2,7 @@ package org.jenkinsci.plugins.valgrind;
 
 import hudson.model.HealthReport;
 import hudson.model.AbstractBuild;
+import hudson.model.Run;
 import hudson.util.ChartUtil;
 import hudson.util.DataSetBuilder;
 import hudson.util.Graph;
@@ -108,7 +109,7 @@ public class ValgrindBuildAction extends AbstractValgrindBuildAction
 
 		for (ValgrindBuildAction buildAction = this; buildAction != null; buildAction = buildAction.getPreviousResult())
 		{
-			ChartUtil.NumberOnlyBuildLabel label = new ChartUtil.NumberOnlyBuildLabel(buildAction.owner);
+			ChartUtil.NumberOnlyBuildLabel label = new ChartUtil.NumberOnlyBuildLabel((hudson.model.Run)buildAction.owner);
 			ValgrindReport report = buildAction.getResult().getReport();
 
 			// Memcheck:
