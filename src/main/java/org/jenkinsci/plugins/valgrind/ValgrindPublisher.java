@@ -140,7 +140,7 @@ public class ValgrindPublisher extends Recorder
 				fileFrom.copyTo(fileTo);
 			}
 			
-			ValgrindParserResult parser = new ValgrindParserResult("valgrind-plugin/valgrind-results/"+valgrindPublisherConfig.getPattern());
+			ValgrindParserResult parser = new ValgrindParserResult("valgrind-plugin/valgrind-results/",valgrindPublisherConfig.getPattern());
 			
 			ValgrindResult valgrindResult = new ValgrindResult(build, parser);
 			ValgrindReport valgrindReport = valgrindResult.getReport();
