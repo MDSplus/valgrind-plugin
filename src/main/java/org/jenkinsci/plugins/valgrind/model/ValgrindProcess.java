@@ -85,8 +85,8 @@ public class ValgrindProcess implements Serializable
 		
 		valgrind_arguments.add(arg);
 		
-		// actually, we only really care about the tool argument
-		if ( arg.substring(0, 7).equals("--tool=")) {
+		// actually, we only really care about the tool argument                
+		if ( arg.length() >= 7 &&  arg.substring(0, 7).equals("--tool=")) {
 			tool = arg.substring(7);
 		}
 	}
